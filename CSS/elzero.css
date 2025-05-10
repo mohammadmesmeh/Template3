@@ -99,7 +99,7 @@ header .container nav>ul a {
 
 }
 
-header .container nav ul a:before {
+header .container nav ul .list-head:before {
     content: "";
     height: 4px;
     background-color: var(--main-color);
