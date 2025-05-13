@@ -13,7 +13,9 @@ body {
     --main-color-alter: #1787e0;
     --white-color: white;
     --black-color: black;
+    --section-background: #ececec;
     --transition: .4s;
+    --sction-padding: 100px;
 }
 
 html {
@@ -67,6 +69,7 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 header .container .logo {
@@ -110,7 +113,7 @@ header .container nav ul .list-head:before {
     transition: var(--transition);
 }
 
-header .container ul a:hover {
+header .container nav ul a:hover {
     color: var(--main-color);
     background-color: #fafafa;
     transition: var(--transition);
@@ -129,9 +132,9 @@ header .container ul a:hover::before {
         height: 50px;
     }
 
-    header .container ul a {
-        padding: 0 15px;
-        font-size: 15px;
+    header .container nav ul a {
+        padding: 0 10px;
+        font-size: 13px;
         height: 50px;
     }
 }
@@ -212,13 +215,16 @@ header .container ul a:hover::before {
 .landing .go-down {
     position: absolute;
     left: 50%;
-    transform: translateX(50%, -50%);
+    margin: 0 auto;
+    transform: translateX(-50%);
     color: var(--main-color);
     bottom: 10px;
 
 }
 
 .landing .go-down i {
+    /* position: absolute; */
+    margin: 0 auto;
     animation-name: bouncing;
     animation-duration: 1.5s;
     animation-iteration-count: infinite;
@@ -244,77 +250,445 @@ header .container ul a:hover::before {
 
 /* End Landing */
 /* Start mega-mnue */
-header nav ul .mnue {
+header .container {
     position: relative;
+
 }
 
-header nav ul .mnue .mega-mnue {
+header .container .mega-mnue {
     opacity: 0;
-    transform: translateY(30px);
     z-index: -1;
     position: absolute;
+    bottom: -400px;
     right: 0%;
-    transition: transform var(--transition);
+    transition: bottom var(--transition), top var(--transition);
     background-color: var(--white-color);
-    width: 95vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 30px;
-    padding: 30px;
+
     border-bottom: 4px solid var(--main-color);
 }
 
-header nav ul .mnue .mega-mnue.click {
+header .container .mega-mnue.click {
 
     position: absolute;
     background-color: var(--white-color);
-    width: 95vw;
-    right: -20%;
+    width: 100%;
+    padding: 50px 0;
+    left: 0;
     opacity: 1;
-    transform: translateY(0);
+    bottom: -344px;
     z-index: 3;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 30px;
-    padding: 30px;
     border-bottom: 4px solid var(--main-color);
 
 }
 
-header nav ul .mnue .mega-mnue .img img {
-    width: 500px;
+
+header .container .mega-mnue .img img {
+    width: 400px;
 }
 
-header nav ul .mnue .mega-mnue .link {
+@media (max-width:767px) {
+
+    header .container .mega-mnue.click {
+        flex-direction: column;
+        top: 101%;
+        padding: 8px 20px;
+        height: fit-content;
+        gap: 0px;
+    }
+
+    header .container .mega-mnue {
+        top: 200%;
+    }
+}
+
+@media (max-width:992px) {
+    header .container .mega-mnue .img img {
+        display: none;
+    }
+
+    header .container .mega-mnue.click {
+        bottom: -335px;
+    }
+
+
+    header .container .mega-mnue .link {
+        width: 100%;
+
+    }
+
+    header .container .mega-mnue .link li {
+        width: 100%
+    }
+}
+
+@media (max-width:991px) {
+    header .container .mega-mnue .link {
+        width: calc(100% - 400px);
+    }
+}
+
+header .container .mega-mnue .link {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    margin-bottom: 20px;
-    width: calc(100% - 500px);
-}
-
-header nav ul .mnue .mega-mnue .link li {
     width: 100%;
-    align-self: flex-start;
+
 }
 
-header nav ul .mnue .mega-mnue .link li a {
+header .container .mega-mnue .link li:not(:last-child) {
+    border-bottom: 1px solid #e9e6e6;
+}
 
-    padding-left: 10px;
+@media (max-width:767px) {
+    header .container .mega-mnue ul:first-of-type li:last-child {
+        border-bottom: 1px solid #e9e6e6;
+    }
+
+}
+
+header .container .mega-mnue .link li {
+    width: 100%;
+    justify-self: flex-start;
+    padding: 10px;
+    transition: var(--transition);
+}
+
+header .container .mega-mnue .link li:hover {
+    color: var(--main-color);
+    background-color: #f1f0f0;
+
+}
+
+header .container .mega-mnue .link li a {
+    padding: 20px 20px 20px 0;
     color: var(--main-color);
     font-weight: bold;
-    text-align: right;
-    height: 50px;
-    justify-content: flex-start;
-    border-bottom: 1px solid #ECECEC;
 
 }
 
-header nav ul .mnue .mega-mnue .link li a i {
+header .container .mega-mnue .link li a i {
     margin-right: 10px;
     font-size: 25px;
 }
 
 /* End mega-mnue */
+
+/* Start Main-Titel */
+.main-titel {
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    border: 2px solid black;
+    width: fit-content;
+    margin: 100px auto;
+    padding: 10px 20px;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 1;
+
+}
+
+.main-titel:hover {
+    color: white;
+    border: 2px solid white;
+    transition-delay: .5s;
+}
+
+.main-titel::after {
+    content: "";
+    height: 15px;
+    width: 15px;
+    background-color: var(--main-color);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.main-titel::before {
+    content: "";
+    height: 15px;
+    width: 15px;
+    background-color: var(--main-color);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+}
+
+.main-titel::before {
+    left: -30%;
+}
+
+.main-titel::after {
+    right: -30%;
+}
+
+.main-titel:hover::before {
+    z-index: -1;
+    animation-name: left-active;
+    animation-duration: .5s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+.main-titel:hover::after {
+    z-index: -1;
+    animation-name: right-active;
+    animation-duration: .5s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+
+}
+
+@keyframes left-active {
+    50% {
+        left: 0;
+        height: 15px;
+        width: 15px;
+
+    }
+
+    100% {
+        left: 0;
+        width: 100%;
+        border-radius: 0;
+        height: 100%;
+    }
+}
+
+@keyframes right-active {
+    50% {
+        right: 0%;
+        height: 15px;
+        width: 15px;
+    }
+
+    100% {
+        right: 0%;
+        width: 100%;
+        border-radius: 0;
+        height: 100%;
+    }
+}
+
+/* End Main-Titel */
+/* Start articles */
+.articles {
+    padding-top: var(--sction-padding);
+    padding-bottom: var(--sction-padding);
+}
+
+.articles .container {
+    display: grid;
+    /* grid-template-rows: repeat(340px , minmax(auto-fill , 1fr)); */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.articles .container .card {
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 10%);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform var(--transition), box-shadow var(--transition);
+
+}
+
+.articles .container .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 20%);
+}
+
+.articles .container .card img {
+    width: inherit;
+    border-radius: 8px right;
+}
+
+.articles .container .card .text {
+    padding: 20px;
+}
+
+.articles .container .card .text h4 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.articles .container .card .text p {
+    line-height: 1.5;
+    color: #777;
+}
+
+.articles .container .card .info {
+    padding: 20px;
+    border-top: 1px solid #e6e6e7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+}
+
+.articles .container .card .info a {
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+.articles .container .card .info a:hover,
+.info i:hover {
+    color: var(--main-color-alter);
+}
+
+.articles .container .card .info i {
+    color: var(--main-color);
+    cursor: pointer;
+
+}
+
+.articles .container .card:hover .info i {
+    animation-name: right-to-left;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes right-to-left {
+
+    0%,
+    10%,
+    30%,
+    80%,
+    90%,
+    100% {
+        transform: translateX(0);
+    }
+
+    20%,
+    40%,
+    50%,
+    60%,
+    70% {
+        transform: translateX(10px);
+    }
+
+
+}
+
+/* End articles */
+/* Start Gallary */
+.gallery {
+    padding-top: var(--sction-padding);
+    padding-bottom: var(--sction-padding);
+    background-color: var(--section-background);
+}
+
+.gallery .container {
+    display: grid;
+
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 30px;
+
+}
+
+.gallery .container .box {
+    position: relative;
+    border: 15px solid white;
+    box-shadow: 0px 12px 20px 0px rgba(0, 0, 0, 13%), 0px 2px 4px 0px rgba(0, 0, 0, 12%);
+    overflow: hidden;
+
+
+}
+
+.gallery .container .box img {
+    width: 100%;
+    height: 100%;
+    transition: transform var(--transition);
+
+}
+
+.gallery .container .box:hover img {
+    transform: rotateZ(5deg) scale(1.1);
+
+}
+
+.gallery .box::after {
+    content: "";
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    opacity: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+}
+
+.gallery .box:hover::after {
+    animation: opacity-whight;
+    animation-duration: .5s;
+
+}
+
+
+
+
+@keyframes opacity-whight {
+
+    0%,
+    50% {
+        opacity: .33;
+
+    }
+
+    100% {
+        opacity: 0;
+        width: 200%;
+        height: 200%;
+
+
+    }
+}
+
+/* End Gallary */
+/* Start Features */
+.features{
+    padding-top: var(--sction-padding);
+    padding-bottom: var(--sction-padding);
+}
+.features .container{
+    display: grid;
+    /* padding-left:30px ; */
+    grid-template-columns: repeat(auto-fill, minmax(350px ,1fr));
+    gap: 40px;
+}
+.features .container .card img{
+    width: 100%;
+}
+.features .container .card .text{
+text-align: center;
+padding: 20px;
+}
+.features .container .card .text h2{
+margin-bottom: 20px;
+ /* border-bottom : 4px solid #1787e0; */
+ position: relative;
+ width: fit-content;
+ margin:  0 auto 20px auto;
+}
+.features .container .card .text h2::before{
+    content: "";
+    position: absolute;
+    border-bottom : 4px solid #1787e0;
+    width: 100%;
+    height: 100%;padding-bottom: 4px;
+}
+
+
+/* End Features */
