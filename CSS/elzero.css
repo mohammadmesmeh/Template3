@@ -933,14 +933,14 @@ header .container .mega-mnue .link li a i {
 
 .team-members .container {
     display: grid;
-   
+
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 30px;
     row-gap: 50px;
 }
 
 .team-members .container .card {
-   
+
     position: relative;
     height: fit-content;
 
@@ -1038,15 +1038,120 @@ header .container .mega-mnue .link li a i {
     transition: var(--transition);
 
 }
-.team-members .card .contant p{
-       transition: var(--transition);
-       font-size: 16px;
+
+.team-members .card .contant p {
+    transition: var(--transition);
+    font-size: 16px;
 }
 
-.team-members .card:hover .contant h3 , .team-members .card:hover .contant p {
-        color: #777;
+.team-members .card:hover .contant h3,
+.team-members .card:hover .contant p {
+    color: #777;
 }
 
 
 
-/* Start Team-members */
+/* End Team-members */
+/* Start services */
+.services {
+    background-color: var(--section-background);
+    padding-top: var(--sction-padding);
+    padding-bottom: var(--sction-padding);
+}
+
+.services .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+
+}
+
+.services .container .card {
+    text-align: center;
+    background-color: white;
+    padding: 30px 0px 0px 0px;
+    box-shadow: rgba(0, 0, 0, .3) 0px 4px 12px;
+    transition: var(--transition);
+    position: relative;
+    counter-increment: services;
+
+}
+.services .container .card:hover {
+  
+    transform: translateY(-10%);
+}
+.services .container .card::before {
+    content: "";
+    position: absolute;
+    background-color: var(--main-color);
+    width: 0%;
+    height: 4px;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: var(--transition);
+}
+
+
+.services .container .card:hover::before {
+    width: 100%;
+}
+
+.services .container .card i {
+    color: #d5d5d5;
+}
+
+.services .container .card h2 {
+    align-self: center;
+    margin: 20px;
+    color: var(--main-color);
+}
+
+.services .container .card .info {
+    position: relative;
+    padding: 15px;
+    background-color: #f9f9f9;
+    text-align: right;
+    overflow: hidden;
+}
+
+.services .container .card .info::before {
+    content: "0" counter(services);
+    position: absolute;
+    background-color: var(--main-color);
+    color: white;
+    left: 0;
+    top: 0;
+    width: 80px;
+    height: 100%;
+    text-align: center;
+
+    font-size: 25px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+
+
+
+}
+
+.services .container .card .info::after {
+    content: "";
+    position: absolute;
+    background-color: #d5d5d5;
+    left: 70px;
+    top: 0;
+    width: 50px;
+    height: 130%;
+    transform: skewX(-30deg);
+ 
+}
+
+.services .container .card .info a {
+    color: var(--main-color);
+
+}
+
+/* End services */
