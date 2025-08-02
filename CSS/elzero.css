@@ -1076,10 +1076,12 @@ header .container .mega-mnue .link li a i {
     counter-increment: services;
 
 }
+
 .services .container .card:hover {
-  
+
     transform: translateY(-10%);
 }
+
 .services .container .card::before {
     content: "";
     position: absolute;
@@ -1146,7 +1148,7 @@ header .container .mega-mnue .link li a i {
     width: 50px;
     height: 130%;
     transform: skewX(-30deg);
- 
+
 }
 
 .services .container .card .info a {
@@ -1155,3 +1157,155 @@ header .container .mega-mnue .link li a i {
 }
 
 /* End services */
+/* Start our-skills */
+.our-skills {
+    padding-top: var(--sction-padding);
+    padding-bottom: var(--sction-padding);
+
+}
+
+.our-skills .container {
+    display: flex;
+
+}
+
+.our-skills .container .skills {
+    width: 100%;
+}
+
+
+.our-skills .container .skills .skill .the-progress {
+    background-color: var(--section-background);
+    height: 25px;
+    margin: 15px 0;
+    position: relative;
+}
+
+.our-skills .container .skills .the-progress span {
+    background-color: var(--main-color);
+    height: 100%;
+    width: 0%;
+    position: absolute;
+}
+
+
+.our-skills .container .skills h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.our-skills .container .skills h3 span {
+    padding: 3px 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 12px;
+    color: var(--main-color);
+}
+
+.our-skills .container img {
+    width: 100%;
+}
+
+@media(max-width:1000px) {
+    .our-skills .container img {
+        display: none;
+    }
+}
+
+/* End our-skills */
+/* Start How-It-Works */
+.Work-steps {
+    padding-bottom: var(--sction-padding);
+    padding-top: var(--sction-padding);
+    background-color: var(--section-background);
+}
+
+.Work-steps .container {
+    display: flex;
+    justify-content: space-between;
+    /* gap: 30px; */
+    align-items: center;
+
+}
+
+.Work-steps .container .img-basic {
+    max-width: 100%;
+    margin-right: 100px;
+}
+
+.Work-steps .container .card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    border: 3px solid white;
+    border-radius: 5px;
+    padding: 30px;
+    margin-bottom: 10px;
+    background-color: #f6f5f5;
+    position: relative;
+    z-index: 1;
+
+}
+
+.Work-steps .container .cards .card::before {
+    content: "";
+    height: 0%;
+    width: 0%;
+    background-color: #EDEDED;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: -1;
+    transform: translate(-50% ,-50%);
+    transition: calc(var(--transition) + .2s);
+}
+
+.Work-steps .container .cards .card:hover::before {
+    height: 100%;
+    width: 100%;
+}
+
+
+.Work-steps .container .card img {
+    width: 64px;
+}
+
+.Work-steps .container .card .info h4 {
+    font-size: 25px;
+    font: bold;
+}
+
+.Work-steps .container .card .info p {
+    line-height: 1.7;
+    color: #777;
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+@media (max-width:1100px) {
+
+    .Work-steps .container {
+        display: block;
+
+    }
+
+    .Work-steps .container .img-basic {
+        display: block;
+        width: 60%;
+        margin: 30px auto 60px;
+    }
+
+    .Work-steps .container .card {
+        margin-top: 30px;
+        display: block;
+        text-align: center;
+    }
+
+    .Work-steps .container .card img {
+        margin-bottom: 10px;
+    }
+}
+
+/* End How-It-Works */
