@@ -1127,7 +1127,6 @@ header .container .mega-mnue .link li a i {
     width: 80px;
     height: 100%;
     text-align: center;
-
     font-size: 25px;
     font-weight: bold;
     display: flex;
@@ -1205,6 +1204,11 @@ header .container .mega-mnue .link li a i {
 
 .our-skills .container img {
     width: 100%;
+        position: relative;
+    animation-name: up-and-down;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
 }
 
 @media(max-width:1000px) {
@@ -1224,7 +1228,7 @@ header .container .mega-mnue .link li a i {
 .Work-steps .container {
     display: flex;
     justify-content: space-between;
-    /* gap: 30px; */
+    
     align-items: center;
 
 }
@@ -1232,6 +1236,11 @@ header .container .mega-mnue .link li a i {
 .Work-steps .container .img-basic {
     max-width: 100%;
     margin-right: 100px;
+        position: relative;
+    animation-name: up-and-down;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
 }
 
 .Work-steps .container .card {
@@ -1258,7 +1267,7 @@ header .container .mega-mnue .link li a i {
     left: 50%;
     top: 50%;
     z-index: -1;
-    transform: translate(-50% ,-50%);
+    transform: translate(-50%, -50%);
     transition: calc(var(--transition) + .2s);
 }
 
@@ -1270,6 +1279,7 @@ header .container .mega-mnue .link li a i {
 
 .Work-steps .container .card img {
     width: 64px;
+  
 }
 
 .Work-steps .container .card .info h4 {
@@ -1309,3 +1319,155 @@ header .container .mega-mnue .link li a i {
 }
 
 /* End How-It-Works */
+/* Start Event */
+.events {
+    padding-top: var(--sction-padding);
+    padding-bottom: var(--sction-padding);
+}
+
+.events .container .info {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 30px;
+
+}
+
+.events .container .info img {
+    width: 450px;
+        position: relative;
+    animation-name: up-and-down;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@media (max-width:1000px) {
+    .events .container .info {
+    flex-direction: column;
+
+}
+.events .container .info img{
+  width: 300px;
+}
+   
+}
+
+.events .container .info .content {
+    text-align: center;
+
+}
+
+.events .container .info .content .counter-timing {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+
+}
+
+.events .container .info .content .counter-timing .unit {
+    border: 1px solid #d4d4d4;
+    border-radius: 5px;
+    transition: var(--transition);
+    
+}
+.events .container .info .content .counter-timing .unit:hover {
+border: 1px solid var(--main-color);
+}
+.events .container .info .content .counter-timing .unit:hover span:first-of-type{
+    border-bottom: 1px solid var(--main-color);
+}
+.events .container .info .content .counter-timing .unit span:first-of-type{
+    padding: 15px 5px;
+    max-width: 75px;
+    border-bottom: 1px solid #d4d4d4;
+    font-size: 35px;
+    color: var(--main-color);
+    font-weight: bold;
+    transition: var(--transition);
+}
+.events .container .info .content .counter-timing .unit span:last-child{
+    padding-top: 8px;
+    padding-bottom: 8px;
+    
+}
+
+.events .container .info .content .counter-timing .unit span {
+    display: block;
+}
+
+.events .container .info .content  h4{
+    margin-top: 35px;
+    margin-bottom: 35px;
+    font-size: 30px;
+}
+.events .container .info .content p{
+    line-height: 1.7;
+    font-size: 19px;
+    color: #777;
+    max-width: 500px;
+}
+.events .container .subscribe form{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #f6f5f5;
+    padding:30px 40px;
+    border-radius: 50px;
+    gap: 20px;
+}
+.events .container .subscribe form input{
+     border: none;
+    outline: none;
+     padding: 20px ;
+     border-radius: 50px;
+     font-size: 100%;
+}
+
+.events .container .subscribe form input:first-of-type {
+    width: 60%;
+    caret-color: var(--main-color);
+    flex: 1;
+}
+.events .container .subscribe form input:first-of-type::placeholder{
+    transition: opacity var(--transition);
+}
+.events .container .subscribe form input:first-of-type:focus::placeholder{
+    opacity: 0;
+}
+.events .container .subscribe form input[type="submit"]{
+    background-color: var(--main-color);
+    color: rgb(255, 255, 255);
+    width: 34%; 
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition);
+
+}
+.events .container .subscribe form input[type="submit"]:hover{
+background-color: var(--main-color-alter);
+}
+@media (max-width:767px) {
+     .events .container .subscribe form{
+   flex-direction: column;
+  row-gap: 15px;
+  border-radius: 0;
+        max-width: 100%;
+ 
+}
+.events .container .subscribe form input:first-of-type{
+    min-width: 100%;
+    border-radius: 0;
+}
+.events .container .subscribe form input[type="submit"]{  
+    width: 100%;
+           margin: 0px auto;
+           border-radius: 0;
+    
+}
+
+}
+/* End Event */
